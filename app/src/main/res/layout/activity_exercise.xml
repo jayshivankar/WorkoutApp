@@ -22,7 +22,7 @@
     <FrameLayout
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:id = "@+id/flProgress"
+        android:id = "@+id/flRestView"
         android:layout_marginTop="10dp"
         android:background="@drawable/item_color_accent_border_ripple_background"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -40,7 +40,6 @@
         android:background="@drawable/circular_progress_gray"
         android:progressDrawable="@drawable/circular_progress_bar"
         android:indeterminate="false"
-
         android:max="10"
         style="?android:progressBarStyleHorizontal"
         android:rotation="-90"/>
@@ -67,6 +66,35 @@
 
     </FrameLayout>
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:id = "@+id/ivImage"
+        android:layout_height="0dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/ic_jumping_jacks"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/tvExerciseName"
+        app:layout_constraintTop_toBottomOf="@id/toolbarExercise"/>
+
+    <TextView
+        android:id = "@+id/tvExerciseName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/exercise_name"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ivImage"
+        tools:visibility="visible"
+        />
+
+
+
+
+
     <FrameLayout
         android:layout_width="100dp"
         android:layout_height="100dp"
@@ -78,7 +106,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/toolbarExercise"
+        app:layout_constraintTop_toBottomOf="@id/tvExerciseName"
 
         >
 
@@ -125,7 +153,7 @@
         android:text="GET READY IN"
         android:textSize="22sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/flProgress"
+        app:layout_constraintBottom_toTopOf="@+id/flRestView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/toolbarExercise"

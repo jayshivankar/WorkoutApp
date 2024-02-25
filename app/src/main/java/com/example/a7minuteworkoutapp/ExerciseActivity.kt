@@ -13,6 +13,8 @@ class ExerciseActivity : AppCompatActivity() {
     private var restProgress = 0
     private var exerciseTimer : CountDownTimer? = null
     private var exerciseProgress = 0
+    private var exerciseList : ArrayList<exerciseModel>? = null
+    private var currentExercisePosition = -1
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,6 +25,7 @@ class ExerciseActivity : AppCompatActivity() {
         if (supportActionBar != null) {
             supportActionBar?.setDisplayHomeAsUpEnabled(true)
         }
+        exerciseList = constants.defaultExerciseList()
 
         binding?.toolbarExercise?.setNavigationOnClickListener {
             onBackPressed()
@@ -31,6 +34,14 @@ class ExerciseActivity : AppCompatActivity() {
 
     }
     private fun setRestView(){
+
+        binding?.progressBarExercise?.visibility = View.VISIBLE
+        binding?.tvTitle?.visibility = View.VISIBLE
+        binding?.flRestView?.visibility = View.VISIBLE
+        binding?.flExerciseView?.visibility = View.INVISIBLE
+        binding?.tvExerciseName?.visibility = View.INVISIBLE
+        binding?.ivImage?.visibility = View.INVISIBLE
+
         if(restTimer!=null){
             restTimer?.cancel()
             restProgress = 0
@@ -40,12 +51,20 @@ class ExerciseActivity : AppCompatActivity() {
 
     private fun setupExerciseView(){
         binding?.progressBarExercise?.visibility = View.INVISIBLE
-        binding?.tvTitle?.text = "Exercise Name"
+        binding?.tvTitle?.visibility = View.INVISIBLE
+        binding?.flRestView?.visibility = View.INVISIBLE
+
         binding?.flExerciseView?.visibility = View.VISIBLE
+        binding?.tvExerciseName?.visibility = View.VISIBLE
+        binding?.ivImage?.visibility = View.VISIBLE
+
+
         if (exerciseTimer!= null){
             exerciseTimer?.cancel()
             exerciseProgress=0
         }
+        binding?.ivImage?.setImageResource(exerciseList!![currentExercisePosition].getImage())
+        binding?.tvExerciseName?.text = exerciseList!![currentExercisePosition].getName()
         setExerciseProgressBar()
     }
 
@@ -61,6 +80,7 @@ class ExerciseActivity : AppCompatActivity() {
             }
 
             override fun onFinish() {
+                currentExercisePosition++
               setupExerciseView()
             }
 
@@ -77,9 +97,14 @@ class ExerciseActivity : AppCompatActivity() {
             }
 
             override fun onFinish() {
-                Toast.makeText(
-                    this@ExerciseActivity,
-                    "30 seconds are over ", Toast.LENGTH_LONG).show()
+                if (currentExercisePosition < exerciseList?.size!! - 1) {
+                    setRestView()
+                } else {
+                    Toast.makeText(
+                        this@ExerciseActivity,
+                        "Congratulations !! You have completed the workout. ", Toast.LENGTH_LONG
+                    ).show()
+                }
             }
 
         }.start()
