@@ -11,3 +11,5 @@ q
 Aapp/src/main/java/com/example/a7minuteworkoutapp/exerciseModel.kt,d/3/d3bacd1111a22d9c4b9b3fa0b03bba624e3c6f5a
 m
 =app/src/main/java/com/example/a7minuteworkoutapp/constants.kt,5/3/53ea5c8b2f0f8479b9e70d136b21b346a684786a
+P
+ app/src/main/AndroidManifest.xml,8/c/8c55c3ccc257e5907959013f99656e4c8ec3903e
