@@ -8,6 +8,7 @@ import android.os.CountDownTimer
 import android.speech.tts.TextToSpeech
 import android.view.View
 import android.widget.Toast
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.a7minuteworkoutapp.databinding.ActivityExerciseBinding
 
 class ExerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
@@ -20,6 +21,7 @@ class ExerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
     private var currentExercisePosition = -1
     private var tts: TextToSpeech? = null
     private var player: MediaPlayer? = null
+    private var exerciseAdapter : ExerciseStatusAdapter? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,8 +40,19 @@ class ExerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
             onBackPressed()
         }
         setRestView()
+        setupExerciseRecyclerView()
 
     }
+
+    private fun setupExerciseRecyclerView(){
+        binding?.rvExerciseStatus?.layoutManager =
+            androidx.recyclerview.widget.LinearLayoutManager(this,
+                LinearLayoutManager.HORIZONTAL, false)
+        exerciseAdapter = ExerciseStatusAdapter(exerciseList!!)
+        binding?.rvExerciseStatus?.adapter = exerciseAdapter
+    }
+
+
     private fun setRestView(){
 
         try {
@@ -108,6 +121,8 @@ class ExerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
 
             override fun onFinish() {
                 currentExercisePosition++
+                exerciseList!![currentExercisePosition].setIsSelected(true)
+                exerciseAdapter!!.notifyDataSetChanged()
               setupExerciseView()
             }
 
@@ -124,6 +139,12 @@ class ExerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
             }
 
             override fun onFinish() {
+                exerciseList!![currentExercisePosition].setIsSelected(false)
+                exerciseList!![currentExercisePosition].setIsCompleted(true)
+
+                exerciseAdapter!!.notifyDataSetChanged()
+
+
                 if (currentExercisePosition < exerciseList?.size!! - 1) {
                     setRestView()
                 } else {

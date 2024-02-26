@@ -13,3 +13,5 @@ m
 =app/src/main/java/com/example/a7minuteworkoutapp/constants.kt,5/3/53ea5c8b2f0f8479b9e70d136b21b346a684786a
 P
  app/src/main/AndroidManifest.xml,8/c/8c55c3ccc257e5907959013f99656e4c8ec3903e
+y
+Iapp/src/main/java/com/example/a7minuteworkoutapp/ExerciseStatusAdapter.kt,c/4/c4ee1b5f0ab8f7cf0fb67c25108233c6d0aa14c3
