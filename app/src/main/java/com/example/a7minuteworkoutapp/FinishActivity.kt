@@ -6,6 +6,7 @@ import android.view.MotionEvent
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.activity.viewModels
 import androidx.annotation.RequiresApi
 import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
@@ -18,11 +19,17 @@ import com.example.a7minuteworkoutapp.databinding.ActivityFinishActvityBinding
 
 class FinishActvity : AppCompatActivity() {
 
+
+    private val viewModel by viewModels<MainViewModel>()
     private lateinit var appBarConfiguration: AppBarConfiguration
     private  var binding: ActivityFinishActvityBinding?  = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        
+        installSplashScreen().apply {
+            setKeepVisibleCondition { viewModel.isReady.value }
+        }
 
         binding = ActivityFinishActvityBinding.inflate(layoutInflater)
         setContentView(binding?.root)

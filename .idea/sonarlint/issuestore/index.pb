@@ -17,3 +17,7 @@ y
 Iapp/src/main/java/com/example/a7minuteworkoutapp/ExerciseStatusAdapter.kt,c/4/c4ee1b5f0ab8f7cf0fb67c25108233c6d0aa14c3
 r
 Bapp/src/main/java/com/example/a7minuteworkoutapp/FinishActivity.kt,e/6/e68525467b369488fef87b54582296a2fdae8c3c
+r
+Bapp/src/main/java/com/example/a7minuteworkoutapp/MainViewModeol.kt,6/b/6b9626d46c4501db9840ed0213071bbad1d494c7
+q
+Aapp/src/main/java/com/example/a7minuteworkoutapp/MainViewModel.kt,5/4/5452c552dfff73beb067aaaf44adcf1d2ec443db

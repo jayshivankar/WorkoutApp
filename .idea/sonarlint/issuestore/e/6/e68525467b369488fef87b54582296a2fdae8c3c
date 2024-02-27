@@ -1,10 +1,9 @@
 
-Okotlin:S1481,"+Remove this unused "button" local variable.(´ÉÉŒüÿÿÿÿ8§·Î½Ş1
-Skotlin:S1481+"/Remove this unused "finishText" local variable.(ÿÌÍùÿÿÿÿ8¨·Î½Ş1
-Qkotlin:S1481*"-Remove this unused "congrats" local variable.(®›ˆ÷ıÿÿÿÿ8¨·Î½Ş1
->kotlin:S1128
-"Remove this unused import.(šäªÿÿÿÿÿ8ª·Î½Ş1
->kotlin:S1128"Remove this unused import.(ºØışÿÿÿÿ8ª·Î½Ş1
->kotlin:S1128"Remove this unused import.(§Ú×Úúÿÿÿÿ8ª·Î½Ş1
-9kotlin:S1128"Remove this unused import.(âåÅó8ª·Î½Ş1
-Bkotlin:S1874#"#Deprecated code should not be used.(ğŸÁş8¬·Î½Ş1
+Okotlin:S14813"+Remove this unused "button" local variable.(´ÉÉŒüÿÿÿÿ8§·Î½Ş1
+Skotlin:S14812"/Remove this unused "finishText" local variable.(ÿÌÍùÿÿÿÿ8¨·Î½Ş1
+Qkotlin:S14811"-Remove this unused "congrats" local variable.(®›ˆ÷ıÿÿÿÿ8¨·Î½Ş1
+>kotlin:S1128"Remove this unused import.(šäªÿÿÿÿÿ8ª·Î½Ş1
+>kotlin:S1128"Remove this unused import.(ºØışÿÿÿÿ8ª·Î½Ş1
+>kotlin:S1128"Remove this unused import.(§Ú×Úúÿÿÿÿ8ª·Î½Ş1
+9kotlin:S1128"Remove this unused import.(âåÅó8ª·Î½Ş1
+Bkotlin:S1874*"#Deprecated code should not be used.(ğŸÁş8¬·Î½Ş1
