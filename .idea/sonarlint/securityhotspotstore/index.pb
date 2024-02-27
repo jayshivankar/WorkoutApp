@@ -15,3 +15,5 @@ P
  app/src/main/AndroidManifest.xml,8/c/8c55c3ccc257e5907959013f99656e4c8ec3903e
 y
 Iapp/src/main/java/com/example/a7minuteworkoutapp/ExerciseStatusAdapter.kt,c/4/c4ee1b5f0ab8f7cf0fb67c25108233c6d0aa14c3
+r
+Bapp/src/main/java/com/example/a7minuteworkoutapp/FinishActivity.kt,e/6/e68525467b369488fef87b54582296a2fdae8c3c
